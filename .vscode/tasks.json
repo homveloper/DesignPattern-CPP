@@ -1,0 +1,48 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C/C++: g++.exe 활성 파일 빌드",
+			"command": "C:\\msys64\\mingw64\\bin\\g++.exe",
+			"args": [
+				"-fdiagnostics-color=always",
+				"-g",
+				"${file}",
+				"-o",
+				"${fileDirname}\\${fileBasenameNoExtension}.exe",
+				"-I",
+				"${workspaceFolder}/include",
+				"-L",
+				"${workspaceFolder}/lib"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "컴파일러: C:\\msys64\\mingw64\\bin\\g++.exe"
+		},
+		{
+            "type": "shell",
+            "label": "Run",
+            "command": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+			"args": [
+				"-I",
+				"${workspaceFolder}/include"
+			],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+		}
+	]
+}
